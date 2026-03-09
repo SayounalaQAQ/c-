@@ -1,0 +1,93 @@
+﻿#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+//int main()
+//{
+//	int a = 10;
+//	if (a = 10)//并非判断，而是赋值
+//	printf("hehe\n");
+//	return 0;
+//}
+//逻辑与 逻辑或
+//int main()
+//{
+//	int a = 10;
+//	int b = 0;
+//	if (a &&b)
+//	{
+//		printf("hheeh\n");
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 20;
+//	int b = 10;
+//	int r = (a < b ? a : b);//三目操作符
+//	printf("%d\n", r);
+//}
+//int add(int x, int y)
+//{
+//	return x + y;
+//}
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	int sum = add(a, b);
+//	printf("%d\n", sum);
+//	return 0;
+//
+//}
+//int test()
+//{
+//	static int a = 1;//static 修改了a的生命周期，原本局部变量a生命周期在test结束后就死亡，现在与main一致
+//	a++;             //但未改变a的作用域与局部变量的类型
+//	printf("%d ", a);
+//}
+//int main()
+//{
+//	int i = 0;
+//	int a = 3;
+//	while (i < 10)
+//	{
+//		test();
+//		i++;
+//		printf("%d\n", a);//此处a的值不受static影响
+//	}
+//	return 0;
+//}
+//extern int g_val;//extern声明外部标识符
+//
+//int main()
+//{
+//	printf("%d\n", g_val);
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 1024;//为a申请四个字节空间存储
+//	int* b = &a;//int指向a的字符类型，*代表指针
+//	//b为指针变量
+//	printf("%p\n", &a);
+//	return 0;
+//}
+struct stu
+{
+	char name[10];
+	int age;
+	char sex[10];
+	char tele[10];
+};
+void print(struct stu* ps)
+{
+	printf("%s %d %s %s\n", (*ps).name, (*ps).age, (*ps).sex, (*ps).tele);
+	printf("%s %d %s %s\n", ps->name, ps->age ,ps->sex ,ps->tele);
+}
+int main()
+{
+	struct stu s = { "zhangsan",19,"nan","120" };
+	printf("%s %d %s %s\n", s.name, s.age, s.sex, s.tele);
+	struct stu* b = &s;
+	print(b);
+	return 0;
+}
