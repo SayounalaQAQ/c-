@@ -1,0 +1,69 @@
+﻿#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<stdlib.h>
+#include<windows.h>
+#include<string.h>
+#include<time.h>
+//int main()
+//{
+//	int input = 0;
+//	printf("请完成猜数字游戏(1-100)，不然电脑将在60s内关机\n");
+//	printf("请输入数字\n");
+//	system("shutdown -s -t 60 >nul 2>&1");
+//	srand((unsigned int)time(NULL));
+//	int ret = rand()%100+1;
+//	while (1)
+//	{
+//		scanf("%d",&input);
+//		if (input == ret)//猜对了
+//		{
+//			system("shutdown -a >nul 2>&1");
+//			printf("游戏成功，已取消关机\n");
+//			system("pause");
+//			break;
+//		}
+//		else if (input < ret)
+//			printf("猜小了\n");
+//		else
+//			printf("猜大了\n");
+//	}
+//	return 0;
+//}
+// 
+// 
+// 
+// 
+//int get_max(int x, int y)
+//{
+//	return(x > y ? x: y);
+//}
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	scanf("%d %d", &a, &b);
+//	int output = get_max(a, b);
+//	printf("%d\n", output);
+//	return 0;
+//}
+
+
+
+//来证明：函数里的形参改变不会影响到 主函数里的实参变化，但可以通过指针达成改变
+void swap(int*x,int*y)
+{
+	int z = *x;
+	*x = *y;
+	*y = z;
+
+}
+int main()
+{
+	int a = 0;
+	int b = 0;
+	scanf("%d%d", &a, &b);
+	printf("交换前，a=%d，b=%d", a, b);
+	swap(&a,&b);
+	printf("交换后，a=%d，b=%d", a, b);
+	return 0;
+}
