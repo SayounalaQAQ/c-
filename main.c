@@ -1,0 +1,153 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+//void print(int x)
+//{
+//	if(x>9)
+//		print(x / 10);
+//	printf("%d ",x % 10);
+//}
+//int main()
+//{
+//	unsigned int n = 0;
+//	scanf("%u",&n);
+//	//打印每一位
+//	//1234
+//	//print(123)  4
+//	//print(12）  3
+//	//print(1)    2
+//	//printf(1) 
+//	print(n);
+//	return 0;
+//}
+
+//不用临时变量，计算字符串长度
+//int my_strlen(char* str)
+//{
+//	if (*str != '\0')
+//		return 1 + my_strlen(str + 1);
+//	else
+//		return 0;
+//}
+//int main() 
+//{
+//	char arr[10] = "abc";
+//	printf("%d\n",my_strlen(arr));
+//	return 0;
+//}
+
+//阶乘
+//int test(int x)
+//{
+//	if (x <= 1)
+//		return 1;
+//	else
+//		return x * test(x - 1);
+//}
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int ret = test(n);
+//	printf("ret=%d", ret);
+//	return 0;
+//}
+
+//求第n个斐波那契数
+//1，1，2，3，5，8，13，21，34
+//int test(int x)
+//{
+//	if (x <= 2)
+//		return 1;
+//	else
+//		return test(x - 1) + test(x - 2);
+//}
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int ret = test(n);
+//	printf("ret=%d", ret);
+//	return 0;
+//}
+
+//输入值 找最大
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	int i = 0;
+//	for(i=0;i<=9;i++)
+//		scanf("%d", &arr[i]);
+//	int max = arr[0];
+//	for (i = 1; i <= 9; i++)
+//	{
+//		if (arr[i] > max)
+//			max = arr[i];
+//	}
+//	printf("%d\n", max);
+//	return 0;
+//}
+
+//二维数组
+//int main()
+//{
+//	int arr[3][4] = { 0 };
+//	int i = 0;
+//	int j = 0;
+//	for ( i = 0; i < 3; i++)
+//	{
+//		for (j = 0; j < 4; j++)
+//		{
+//			scanf("%d", &arr[i][j]);
+//		}
+//	}
+//	for (i = 0; i < 3; i++)
+//	{
+//		for (j = 0; j < 4; j++)
+//		{
+//			printf("%d ", arr[i][j]);
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+
+//冒泡排序
+void bubble_sort(int arr[],int sz)
+{
+	
+	//冒泡排序，比较sz-1轮
+	int i = 0;
+	for (i = 0; i < sz - 1; i++)
+	{
+		//每一轮
+		int j = 0;
+		for (j = 0; j < sz-1-i; j++)
+		{
+			if (arr[j] > arr[j + 1])
+			{
+				int z = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = z;
+			}
+		}
+	}
+
+}
+int main()
+{
+	int arr[10] = { 0 };
+	int i = 0;
+	for (i = 0; i < 10; i++)
+	{
+		scanf("%d", &arr[i]);
+	}
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	bubble_sort(arr,sz);
+
+	for (i = 0; i < 10; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+	return 0;
+}
