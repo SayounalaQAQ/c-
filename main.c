@@ -1,0 +1,100 @@
+﻿#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<math.h>
+//int main()
+//{
+//	//要求打印100-200的素数
+//	//素数只能被1和本身整除
+//	//1.打印100-200
+//	//2.用2到i-1试除
+//	int i = 0;
+//	int j = 0;
+//	int count = 0;
+//	for (i = 101; i <= 200; i+=2)
+//	{
+//		int flag = 1;
+//		for (j = 2; j <= sqrt(i); j++)
+//		{
+//			if (i % j == 0)
+//			{
+//				flag = 0;
+//				break;
+//			}
+//		}
+//		if (flag == 1)
+//		{
+//			count++;
+//			printf("%d ", i);
+//		}
+//			
+//	}
+//	printf("素数有%d个\n", count);
+//	return 0;
+//}
+
+
+//用函数
+//int find(int n)
+//{
+//	int j = 0;
+//	for (j = 2; j <= sqrt(n); j++)
+//	{
+//		if (n % j == 0)
+//		{
+//			return 0;
+//		}
+//	}
+//	return 1;
+//}
+//int main()
+//{
+//	int count = 0;
+//	int i = 0;
+//	for (i = 101; i <= 200; i+=2)
+//	{
+//		if (find(i))
+//		{
+//			count++;
+//			printf("%d ", i);
+//		}
+//	}
+//	printf("count=%d\n", count);
+//	return 0;
+//}
+
+
+//二分查找
+int dinary(int arr[],int t,int sz)
+{
+	int left = 0;
+	int right = sz - 1;
+	while (left<=right)
+	{
+		int mid = left + (right - left) / 2;
+		if (arr[mid] < t)
+			left = mid + 1;
+		else if (arr[mid] > t)
+			right = mid - 1;
+		else
+			return mid;
+	}
+	return -1;
+}
+int main()
+{
+	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+	int t = 2;
+	/*int find = 0;*/
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	int ret = dinary(arr, t, sz);
+	if (ret==-1)
+	{
+		printf("没找到");
+		
+	}
+	else
+	{
+		printf("找到了，下标是%d\n", ret);
+	}
+	return 0;
+}
