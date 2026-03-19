@@ -1,0 +1,110 @@
+﻿#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<string.h>
+//int main()
+//{
+//	int a = 7;
+//	int b = 7 << 1;
+//	printf("%d\n", a);
+//	printf("%d\n", b);
+//	return 0;
+//}
+//void test(int arr[])
+//{
+//	printf("%d\n", sizeof(arr));
+//}
+//void test2(char arr1[])
+//{
+//	printf("%d\n", sizeof(arr1));
+//}
+//int main()
+//{
+//	char arr1[10] = { 0 };
+//	int arr[10] = {0};
+//	printf("%d\n", sizeof(arr));
+//	test(arr);
+//	test2(arr1);
+//	return 0;
+//}
+// 
+// 
+// 
+// 
+//struct stu
+//{
+//	char name[20];
+//	int age;
+//	int high;
+//};
+//void set(struct stu *ps)
+//{
+//	//strcpy((*ps).name, "zhangsan");
+//	//(*ps).age = 20;
+//	//(*ps).high = 100;
+//	strcpy(ps->name, "zhangsan");
+//	ps->age = 20;
+//	ps->high = 100;
+//}
+//print(struct stu s)
+//{
+//	printf("%s %d %d\n", s.name, s.age, s.high);
+//}
+//int main()
+//{
+//	struct stu s = { 0 };
+//	set(&s);
+//	print(s);
+//	return 0;
+//}
+
+
+//走台阶，递归，斐波那契数列，一次走一个或两个楼梯
+//int fib(int n)
+//{
+//	if (n <= 2)
+//		return n;
+//	else
+//		return fib(n - 1) + fib(n - 2);
+//}
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int f=fib(n);
+//	printf("有%d个方法", f);
+//	return 0;
+//}
+
+
+//删除数组中指定数值
+int main()
+{
+	//输入n，代表数组存储n个数
+	int n = 0;
+	scanf("%d", &n);
+	//创建数组，往数组里存数
+	int i = 0;
+	int arr[50] = { 0 };
+	for (i = 0; i < n; i++)
+	{
+		scanf("%d", arr + i);
+		//scanf("%d",&arr[i]);
+	}
+	//指定删除的数
+	int del = 0;
+	scanf("%d", &del);
+	//开始遍历
+	int j = 0;//设定新的下标
+	for (i = 0; i < n; i++)
+	{
+		if (arr[i] != del)
+		{
+			arr[j++] = arr[i];
+		}
+	}
+	for (i = 0; i < j; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+	return 0;
+}
